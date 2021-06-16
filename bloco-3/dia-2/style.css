@@ -1,0 +1,33 @@
+<style>
+    
+    h1 {
+        font-family: sans-serif;
+        color: rgb(39, 39, 39);
+        text-decoration: underline;
+        text-decoration-color: rgba(0, 0, 0, 0.747);
+    }
+    p {
+        color: rgb(68, 68, 68);
+        font-weight: 300;
+        font-size: 2.5em;
+        font-family: cursive;
+        line-height: 0mm;
+        text-align: center;
+        
+
+    }
+    body {
+        color: rgb(136, 65, 18);
+        font-size: 16px;
+        font-family: fantasy;
+        background-color: rgb(185, 172, 129);
+        
+    }
+    ul {
+        color: rgb(172, 5, 5);
+    }
+
+    .p-and-ul {
+        background-color: rgb(160, 110, 44);
+    }
+    </style>
