@@ -1,6 +1,6 @@
-let num3 = 65
-let num2 = 55
-let num1 = 60 
+let num3 = 60
+let num2 = 60
+let num1 = -59 
 
 let angulo1; 
 let angulo2;
