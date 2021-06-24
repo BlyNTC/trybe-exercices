@@ -11,7 +11,7 @@ for(index = 0; index < numbers.length; index += 1) {
     }
 }
 
-if(impares > 0) {
+if(impar > 0) {
     console.log(impares)
 } else {
     console.log("nenhum valor ímpar encontrado");
