@@ -8,7 +8,7 @@ for(index = 0; index < numbers.length; index += 1) {
 media = soma / divisor
 console.log(media);
 
-//usa if/else para verificar se a media é maior que 20
+//usa if/else para verificar se a media é maior que 20.
 //usa console.log para imprimir mensagem 'valor maior que 20' caso media seja maior que 20.
 //usa console.log no else para imprimir caso a condição maior que 20 seja verdadeira.
 
