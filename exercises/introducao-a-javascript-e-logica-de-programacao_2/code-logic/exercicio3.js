@@ -9,7 +9,7 @@ let divisor = numbers.length
 //5- usa a variavel divisor para dividir a variavel soma, fazendo a media do array
 //6- usa console.log para imprimir a media(cria a variavel media para imprimir)
 
-for(index = 0; index < numbers.length; index += 1) {
+for(let index = 0; index < numbers.length; index += 1) {
     soma += numbers[index]
 }
 media = soma / divisor

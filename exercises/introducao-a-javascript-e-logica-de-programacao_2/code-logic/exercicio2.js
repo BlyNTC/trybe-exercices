@@ -5,7 +5,7 @@ let soma = 0
 //usa o comando '+=' para somar os elementos e envia-los para a variavel 'soma'
 //usa console.log para imprimir 'soma'
 
-for(index = 0; index < numbers.length; index += 1) {
+for(let index = 0; index < numbers.length; index += 1) {
     soma += numbers[index]
 }
 console.log(soma)

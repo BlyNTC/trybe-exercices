@@ -2,10 +2,10 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let soma = 0
 let divisor = numbers.length
 
-for(index = 0; index < numbers.length; index += 1) {
+for(let index = 0; index < numbers.length; index += 1) {
     soma += numbers[index]
 }
-media = soma / divisor
+let media = soma / divisor
 console.log(media);
 
 //usa if/else para verificar se a media é maior que 20.
