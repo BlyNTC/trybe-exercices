@@ -9,7 +9,7 @@ const returnObject = (name) => {
   }
   return object
 }
-console.log(returnObject('Luiza Drumond'))
+console.log(returnObject("Luiza Drumond"))
 
 const newEmployees = (func) => {
   const employees = {
