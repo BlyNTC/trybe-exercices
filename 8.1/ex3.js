@@ -18,3 +18,7 @@ function compareRespostas(gabarito, respostas) {
 const pontos = (gabarito, respostas, func) => func(gabarito, respostas)
 
 console.log(pontos(RIGHT_ANSWERS, STUDENT_ANSWERS, compareRespostas))
+
+const findDivisibleBy3And5 = (number) =>  (number % 5 === 0) && (number % 3 === 0)
+
+console.log(findDivisibleBy3And5(15))
