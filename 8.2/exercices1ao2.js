@@ -68,8 +68,10 @@ const books = [
 // Dica: use a função find .
 function authorBornIn1947() {
     // escreva aqui o seu código
+    let author = books.find(value => value.author.birthYear === 1947)
+    return author.author.name
   }
-  
+  console.log(authorBornIn1947())
   assert.strictEqual(authorBornIn1947(), 'Stephen King');
 
 // 2 - Retorne o nome do livro de menor nome.
@@ -79,6 +81,8 @@ function smallerName() {
     let nameBook;
     // escreva aqui o seu código
     // Variável nameBook que receberá o valor do menor nome;
+    books.forEach(value=> nameBook = !nameBook||value.name.length < nameBook.length ? value.name : nameBook)
     return nameBook;
   }
+  console.log(smallerName());
   assert.strictEqual(smallerName(), 'Duna');
