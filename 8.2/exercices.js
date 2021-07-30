@@ -69,9 +69,10 @@ const books = [
 function authorBornIn1947() {
     // escreva aqui o seu código
     let author = books.find(value => value.author.birthYear === 1947)
+    console.log(author.author.name)
     return author.author.name
   }
-  console.log(authorBornIn1947())
+  console.log('exercicio1',authorBornIn1947())
   assert.strictEqual(authorBornIn1947(), 'Stephen King');
 
 // 2 - Retorne o nome do livro de menor nome.
@@ -84,12 +85,12 @@ function smallerName() {
     books.forEach(value=> nameBook = !nameBook||value.name.length < nameBook.length ? value.name : nameBook)
     return nameBook;
   }
-  console.log(smallerName());
+  console.log('exercicio2',smallerName());
   assert.strictEqual(smallerName(), 'Duna');
   
 // 3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
 
-const expectedResult = {
+const expectedResult3 = {
   author: {
     birthYear: 1948,
     name: 'George R. R. Martin',
@@ -102,13 +103,13 @@ const expectedResult = {
 
 function getNamedBook() {
   // escreva seu código aqui
-  expectedResult
+  return books.find(value=> value.name.length === 26)
 }
-
-assert.deepStrictEqual(getNamedBook(), expectedResult);
+console.log('exercicio3', getNamedBook());
+assert.deepStrictEqual(getNamedBook(), expectedResult3);
 
 // 4 - Ordene os livros por data de lançamento em ordem decrescente.
-const expectedResult = [
+const expectedResult4 = [
   {
     id: 1,
     name: 'As Crônicas de Gelo e Fogo',
@@ -155,35 +156,48 @@ const expectedResult = [
 
 function booksOrderedByReleaseYearDesc() {
   // escreva aqui seu código
+  return books.sort((a ,b) => b.releaseYear - a.releaseYear)
 }
+console.log('exercicio4',booksOrderedByReleaseYearDesc());
 
-assert.deepStrictEqual(booksOrderedByReleaseYearDesc(), expectedResult);
+assert.deepStrictEqual(booksOrderedByReleaseYearDesc(), expectedResult4);
+
 // 5 - Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário.
 
-const expectedResult = false;
+const expectedResult5 = false;
 
 function everyoneWasBornOnSecXX() {
   // escreva seu código aqui
+  return books.every(value => value.author.birthYear > 1999)
 }
-
-assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult);
+console.log('exercicio5', everyoneWasBornOnSecXX());
+assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult5);
 
 // 6 - Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário.
 
-const expectedResult = true;
+const expectedResult6 = true;
 
 function someBookWasReleaseOnThe80s() {
   // escreva seu código aqui
+  return books.some(value => value.releaseYear > 79 && value.releaseYear > 90)
 }
+console.log('exercicio 6',someBookWasReleaseOnThe80s());
 
-assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult);
+assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult6);
 
 // 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
 
-const expectedResult = false;
+const expectedResult7 = false;
 
 function authorUnique() {
   // escreva seu código aqui
-}
+  // return books.every((book) =>
+  //   !books.some((bookSome) =>
+  //     (bookSome.author.birthYear === book.author.birthYear)
+  //     && (bookSome.author.name !== book.author.name)));
+  return books.some(value => books.every(vl => value.author.birthYear === vl.author.birthYear && value.author.birthYear === vl.author.birthYear))
 
-assert.strictEqual(authorUnique(), expectedResult);
+}
+console.log(authorUnique())
+
+assert.strictEqual(authorUnique(), expectedResult7);
