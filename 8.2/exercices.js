@@ -77,9 +77,9 @@ const expectedResult1 = [
   
   function formatedBookNames() {
     // escreva seu código aqui
-    books.map(element=> `${} - ${} - ${}`)
+    return books.map(element=> `${element.name} - ${element.genre} - ${element.author.name}`)
   }
-  
+  console.log('exercicio1',formatedBookNames());
   assert.deepStrictEqual(formatedBookNames(), expectedResult1);
 
 // 2 - Construa um array de objetos a partir do array de livros. Cada objeto deve conter uma propriedade author , com o nome da pessoa autora do livro, e uma propriedade age com a idade dessa pessoa quando o livro foi lançado. O array deve ser ordenado por idade, ou seja, da pessoa mais jovem para a mais velha considerando suas idades quando o livro foi lançado.
@@ -111,11 +111,23 @@ const expectedResult2 = [
     },
   ];
   
-  function nameAndAge() {
+function nameAndAge() {
     // escreva seu código aqui
-  }
-  
-  assert.deepStrictEqual(nameAndAge(), expectedResult2);
+	let bookSorted = books.sort((b,a)=> {
+		a = a.releaseYear - a.author.birthYear
+		b = b.releaseYear - b.author.birthYear
+
+		return b - a
+	})
+	return bookSorted.map(a=> {
+		return {
+			age: a.releaseYear - a.author.birthYear,
+			author: a.author.name,
+		}
+	})
+}
+console.log('exercicio2',nameAndAge());
+assert.deepStrictEqual(nameAndAge(), expectedResult2);
 
 // 3 - Crie um array com todos os objetos que possuem gênero ficção científica ou fantasia.
 // Dica: use as função filter ;
@@ -152,8 +164,10 @@ const expectedResult3 = [
   
   function fantasyOrScienceFiction() {
     // escreva seu código aqui
+		books.sort((a,b)=>  a.id-b.id)
+		return books.filter(element => element.genre === 'Fantasia' || element.genre === 'Ficção Científica')
   }
-  
+  console.log('exercicio3',fantasyOrScienceFiction());
   assert.deepStrictEqual(fantasyOrScienceFiction(), expectedResult3);
 // 4 - Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
 // Dica: use as funções filter e sort
@@ -183,8 +197,10 @@ const expectedResult4 = [
   
   function oldBooksOrdered() {
     // escreva seu código aqui
+		let oldbook = books.sort((b,a) => b.releaseYear-a.releaseYear).filter(book => 2021 - book.releaseYear > 60)
+		return oldbook
   }
-  
+  console.log('exercicio4',oldBooksOrdered());
   assert.deepStrictEqual(oldBooksOrdered(), expectedResult4);
 
 // 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
@@ -197,8 +213,10 @@ const expectedResult5 = [
   
   function fantasyOrScienceFictionAuthors() {
     // escreva seu código aqui
+		let fantAndSciFi = books.filter(element => element.genre === 'Fantasia' || element.genre === 'Ficção Científica')
+		return fantAndSciFi.map(book=> book.author.name).sort()
   }
-  
+  console.log('exercicio5',fantasyOrScienceFictionAuthors());
   assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult5);
  // 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
  const expectedResult6 = [
@@ -209,16 +227,25 @@ const expectedResult5 = [
   
   function oldBooks() {
     // escreva seu código aqui
+		books.sort((a,b)=>  a.id-b.id)
+		return books.filter(book=> 2021 - book.releaseYear > 60).map(book=> book.name)
   }
-  
+  console.log('exercicio 6',oldBooks());
   assert.deepStrictEqual(oldBooks(), expectedResult6);
 
   //7 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
   // Dica: cada inicial termina com um ponto.
+	
 const expectedResult7 = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
+	books.sort((a,b)=>  a.id-b.id)
 // escreva seu código aqui
+	let bookName = books.find(book=> {
+		let namebook = book.author.name.split(' ')
+		return (namebook[0].length === 2&&namebook[0].length === 2&&namebook[0].length === 2)
+	})
+	return bookName.name
 }
-
+console.log('exercicio 7', authorWith3DotsOnName());
 assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult7);
