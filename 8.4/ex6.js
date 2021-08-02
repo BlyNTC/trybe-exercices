@@ -6,7 +6,12 @@ const grades = [[9, 8, 10, 7, 5], [10, 9, 9, 10, 8], [10, 7, 10, 8, 9]];
 
 function studentAverage() {
   // escreva seu código aqui
-  
+  let object = grades.reduce((acc, nota,i)=>{
+    let media = (array)=> (array.reduce((acc,nota)=> acc + nota))/nota.length
+    acc.push({name: students[i], average: media(nota),})
+    return acc
+  },[])
+  return object
 }
 
 const expected = [
