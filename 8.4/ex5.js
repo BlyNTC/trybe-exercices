@@ -9,6 +9,12 @@ const names = [
 
 function containsA() {
   // escreva seu código aqui
+  return names.reduce((acc, name)=> {
+    for (let i = 0; i < name.length; i++) {
+      acc += name[i].toLowerCase() === 'a' ? 1:0
+    }
+    return acc
+  }, 0)
 }
-
+console.log('exercicio 6',containsA());
 assert.deepStrictEqual(containsA(), 20);
