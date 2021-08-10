@@ -19,6 +19,12 @@ const handleError = (errorReason) =>
 
 // definição da função sendMarsTemperature...
 
+const sendMarsTemperature = (callback, erroCallback) => {
+  let random = Math.random() <= 0.6
+  let error = 'Robot is busy'
+  return random ? callback(getMarsTemperature()) : erroCallback(error)
+}
+
 // imprime "It is currently 47ºF at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
 sendMarsTemperature(temperatureInFahrenheit, handleError);
 
