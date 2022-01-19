@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/BlyNTC/trybe-exercices/issues"
   },
-  "homepage": "https://github.com/BlyNTC/trybe-exercices#readme"
+  "homepage": "https://github.com/BlyNTC/trybe-exercices#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3"
+  }
 }
